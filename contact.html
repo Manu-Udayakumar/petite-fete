@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Petite Fête to book a consultation and request a customized culinary journey proposal.">
+  <title>Plan An Event | Petite Fête | Luxury Inquiry Form</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Shutter Loading Screen -->
+  <div id="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo"><span>PLAN AN EVENT</span></div>
+      <div class="loader-bar-container">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-number">0%</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 160px; padding-bottom: var(--space-lg); background-color: var(--color-champagne);">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="editorial-subtitle">The Inquiry Stage</span>
+        <h1 class="editorial-title" style="font-size: clamp(2.8rem, 6vw, 4.5rem);">Bespoke Curation Form</h1>
+        <p class="editorial-paragraph" style="font-size: 1rem; color: var(--color-olive);">To begin planning your culinary journey, please share the baseline parameters of your celebration below.</p>
+      </div>
+    </section>
+
+    <!-- Form & Info Split -->
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Visual/Editorial details side -->
+          <div class="contact-visual">
+            <div class="contact-editorial-card">
+              <h2 class="contact-editorial-title">The Ledger of Details</h2>
+              <p class="contact-editorial-text">We limit our bookings to a maximum of 40 events globally per year to preserve culinary and design integrity.</p>
+              
+              <div style="font-family: var(--font-sans); font-size: 0.9rem; display: flex; flex-direction: column; gap: var(--space-md);">
+                <p><strong style="color: var(--color-terracotta);">RESPONSE TIMELINE:</strong> Within 48 business hours with an initial moodboard concept proposal.</p>
+                <p><strong style="color: var(--color-terracotta);">STUDIO OFFICES:</strong> New Delhi (Chanakyapuri), Mumbai (Colaba), Rajasthan</p>
+                <p><strong style="color: var(--color-terracotta);">PHONE:</strong> +91 98100 55555 / +91 11 4655 8888</p>
+                <p><strong style="color: var(--color-terracotta);">PARTNERSHIPS:</strong> <a href="mailto:curator@petitefete.co" class="hover-target" style="text-decoration: underline;">curator@petitefete.co</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Luxury Inquiry Form -->
+          <div>
+            <form class="luxury-form" id="inquiry-form" onsubmit="handleInquirySubmit(event)">
+              
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label" for="full-name">Full Name *</label>
+                  <input type="text" id="full-name" required class="form-input hover-target" placeholder="e.g. Lady Vivienne Westwood">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address *</label>
+                  <input type="email" id="email" required class="form-input hover-target" placeholder="e.g. vivienne@westwood.co">
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label" for="event-type">Celebration Type *</label>
+                  <select id="event-type" class="form-select hover-target" required>
+                    <option value="" disabled selected>Select Type</option>
+                    <option value="wedding">Destination Wedding</option>
+                    <option value="corporate">Corporate Brand Activation</option>
+                    <option value="gallery">Gallery Opening & Art Fair</option>
+                    <option value="private">Private Estate Celebration</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="location">Celebration Location *</label>
+                  <input type="text" id="location" required class="form-input hover-target" placeholder="e.g. Umaid Bhawan Palace, Jodhpur">
+                </div>
+              </div>
+
+              <div class="form-group-row">
+                <div class="form-group">
+                  <label class="form-label" for="guest-count">Guest Count *</label>
+                  <select id="guest-count" class="form-select hover-target" required>
+                    <option value="" disabled selected>Select Range</option>
+                    <option value="small">Fewer than 50 Guests</option>
+                    <option value="medium">50 - 150 Guests</option>
+                    <option value="large">150 - 300 Guests</option>
+                    <option value="grand">300+ Guests</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="event-date">Proposed Date</label>
+                  <input type="date" id="event-date" class="form-input hover-target">
+                </div>
+              </div>
+
+              <!-- Budget range selector -->
+              <div class="form-group budget-slider-box">
+                <label class="form-label" for="budget">Culinary Valuation (Budget Range) *</label>
+                <input type="range" id="budget" min="1" max="4" value="2" class="form-input hover-target" style="border: none;" oninput="updateBudgetVal(this.value)">
+                <div class="budget-output" id="budget-val-label">₹10,00,000 - ₹30,00,000 INR</div>
+              </div>
+
+              <!-- Custom Notes -->
+              <div class="form-group">
+                <label class="form-label" for="notes">Curatorial Context / Design Requests</label>
+                <textarea id="notes" class="form-textarea hover-target" placeholder="Tell us about your culinary travel memories, thematic color choices, or specific live stations you want to include..."></textarea>
+              </div>
+
+              <div class="submit-btn-container">
+                <button type="submit" class="btn-luxury-solid-block hover-target">Submit Ledger Details</button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script>
+    // Budget range text updates
+    const budgetLabels = {
+      "1": "Under ₹10,00,000 INR",
+      "2": "₹10,00,000 - ₹30,00,000 INR",
+      "3": "₹30,00,000 - ₹75,00,000 INR",
+      "4": "₹75,00,000+ INR (Unrestricted Curation)"
+    };
+
+    function updateBudgetVal(val) {
+      document.getElementById('budget-val-label').textContent = budgetLabels[val];
+    }
+
+    // Inquiry submission trigger
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      
+      // Select input data
+      const name = document.getElementById('full-name').value;
+      const type = document.getElementById('event-type').value;
+
+      // Show luxury alert
+      alert(`Merci, ${name}! Your curatorial request for a ${type} celebration has been logged into our private ledger. Our experience architects will reach out within 48 business hours with an initial moodboard concept.`);
+      
+      // Reset form
+      document.getElementById('inquiry-form').reset();
+      updateBudgetVal("2"); // Reset budget output
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Petite Fête's global street food curation with an interactive world map highlighting elevated cuisines.">
+  <title>Global Street Food Map | Petite Fête | Experiential Dining</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Shutter Loading Screen -->
+  <div id="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo"><span>GLOBAL STREET FOOD</span></div>
+      <div class="loader-bar-container">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-number">0%</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 160px; padding-bottom: var(--space-md); background-color: var(--color-champagne);">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="editorial-subtitle">The World Canvas</span>
+        <h1 class="editorial-title" style="font-size: clamp(2.8rem, 6vw, 4.5rem);">Interactive Culinary Atlas</h1>
+        <p class="editorial-paragraph" style="font-size: 1rem; color: var(--color-olive);">We travel the world's street corners to source flavor profiles, reinterpreting them as luxurious culinary spectacles. Click on the golden pins to begin the exploration.</p>
+      </div>
+    </section>
+
+    <!-- World Map Container -->
+    <section class="section">
+      <div class="container">
+        <div class="map-wrapper">
+          <!-- Stylized Dotted Vector World Map -->
+          <svg viewBox="0 0 1000 500" class="svg-world-map" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background grids to look architectural -->
+            <line x1="0" y1="100" x2="1000" y2="100" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+            <line x1="0" y1="200" x2="1000" y2="200" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+            <line x1="0" y1="300" x2="1000" y2="300" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+            <line x1="0" y1="400" x2="1000" y2="400" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+            
+            <line x1="200" y1="0" x2="200" y2="500" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+            <line x1="400" y1="0" x2="400" y2="500" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+            <line x1="600" y1="0" x2="600" y2="500" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+            <line x1="800" y1="0" x2="800" y2="500" stroke="rgba(110, 122, 102, 0.08)" stroke-width="0.5" stroke-dasharray="5,5"/>
+
+            <!-- Continents Outlines (Simplified/Stylized) -->
+            <!-- North America -->
+            <path d="M 100 120 L 160 110 L 220 120 L 260 160 L 200 240 L 170 230 L 150 250 Z" />
+            <!-- South America -->
+            <path d="M 220 280 L 260 280 L 280 340 L 240 420 L 220 400 L 210 320 Z" />
+            <!-- Europe -->
+            <path d="M 440 120 L 490 100 L 530 110 L 520 180 L 460 180 Z" />
+            <!-- Africa -->
+            <path d="M 430 210 L 520 200 L 550 260 L 500 360 L 470 360 L 440 260 Z" />
+            <!-- Asia -->
+            <path d="M 540 100 L 750 90 L 880 120 L 850 240 L 780 320 L 730 300 L 660 270 L 600 280 L 560 190 Z" />
+            <!-- Australia -->
+            <path d="M 820 340 L 880 340 L 900 380 L 850 410 L 810 380 Z" />
+
+            <!-- Dynamic interactive pins with coordinates -->
+            <!-- Mexico Pin -->
+            <g class="map-pin hover-target" data-destination="mexico">
+              <circle cx="170" cy="220" r="15" class="pin-pulse"/>
+              <circle cx="170" cy="220" r="5" class="pin-dot"/>
+            </g>
+
+            <!-- France Pin -->
+            <g class="map-pin hover-target" data-destination="france">
+              <circle cx="475" cy="140" r="15" class="pin-pulse"/>
+              <circle cx="475" cy="140" r="5" class="pin-dot"/>
+            </g>
+
+            <!-- Spain Pin -->
+            <g class="map-pin hover-target" data-destination="spain">
+              <circle cx="455" cy="160" r="15" class="pin-pulse"/>
+              <circle cx="455" cy="160" r="5" class="pin-dot"/>
+            </g>
+
+            <!-- Italy Pin -->
+            <g class="map-pin hover-target" data-destination="italy">
+              <circle cx="488" cy="155" r="15" class="pin-pulse"/>
+              <circle cx="488" cy="155" r="5" class="pin-dot"/>
+            </g>
+
+            <!-- Morocco Pin -->
+            <g class="map-pin hover-target" data-destination="morocco">
+              <circle cx="445" cy="205" r="15" class="pin-pulse"/>
+              <circle cx="445" cy="205" r="5" class="pin-dot"/>
+            </g>
+
+            <!-- India Pin -->
+            <g class="map-pin hover-target" data-destination="india">
+              <circle cx="655" cy="235" r="15" class="pin-pulse"/>
+              <circle cx="655" cy="235" r="5" class="pin-dot"/>
+            </g>
+
+            <!-- Thailand Pin -->
+            <g class="map-pin hover-target" data-destination="thailand">
+              <circle cx="725" cy="265" r="15" class="pin-pulse"/>
+              <circle cx="725" cy="265" r="5" class="pin-dot"/>
+            </g>
+
+            <!-- Japan Pin -->
+            <g class="map-pin hover-target" data-destination="japan">
+              <circle cx="820" cy="175" r="15" class="pin-pulse"/>
+              <circle cx="820" cy="175" r="5" class="pin-dot"/>
+            </g>
+          </svg>
+
+          <!-- Interactive Details Card Overlay -->
+          <div class="map-overlay-card" id="map-overlay-card">
+            <div class="map-card-country" id="map-card-country">COUNTRY</div>
+            <h2 class="map-card-title" id="map-card-title">Destination Title</h2>
+            <p class="map-card-desc" id="map-card-desc">Culinary details go here...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional info columns -->
+    <section class="section" style="border-top: 1px solid var(--color-olive-light);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+          <div>
+            <span class="editorial-subtitle">The Curatorial Audit</span>
+            <h2 class="editorial-title">How We Source Globally</h2>
+            <p class="editorial-paragraph">Every route begins with field research. Our culinary directors spend months in local street markets, documenting historical recipes and working side-by-side with local cooks.</p>
+          </div>
+          <div>
+            <span class="editorial-subtitle">Visual Scenography</span>
+            <h2 class="editorial-title">Atmospheric Context</h2>
+            <p class="editorial-paragraph">We recreate the atmosphere of each locale using tailored sensory details—ambient sounds, custom spice vaporizers, and curated lighting setups that mimic the local sun sets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View Petite Fête's dynamic menu collection featuring deconstructed street foods, molecular creations, and pairings.">
+  <title>The Menu Ledger | Petite Fête | Luxury Creations</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Shutter Loading Screen -->
+  <div id="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo"><span>THE LEDGER</span></div>
+      <div class="loader-bar-container">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-number">0%</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 160px; padding-bottom: var(--space-md); background-color: var(--color-champagne);">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="editorial-subtitle">The Culinary Ledger</span>
+        <h1 class="editorial-title" style="font-size: clamp(2.8rem, 6vw, 4.5rem);">Signature Creations</h1>
+        <p class="editorial-paragraph" style="font-size: 1rem; color: var(--color-olive);">Search our dynamic culinary archive. Click on any creation to unlock beverage pairing notes, flavor profiles, and sensory layouts.</p>
+      </div>
+    </section>
+
+    <!-- Search & Filters -->
+    <section class="section" style="padding-top: var(--space-lg);">
+      <div class="container">
+        <!-- Interactive Search Bar -->
+        <div class="menu-search-bar">
+          <input type="text" id="menu-search" placeholder="Search by ingredient, country, or destination..." class="hover-target">
+        </div>
+
+        <!-- Category Buttons -->
+        <div class="gallery-filters" style="margin-bottom: var(--space-lg);">
+          <button class="filter-btn active hover-target" data-filter="all">All Creations</button>
+          <button class="filter-btn hover-target" data-filter="indian">Indian Street Collective</button>
+          <button class="filter-btn hover-target" data-filter="timeless">Timeless Tastes of India</button>
+          <button class="filter-btn hover-target" data-filter="global">Global Street Food</button>
+        </div>
+
+        <!-- Active Items Count -->
+        <div style="text-align: center; font-family: var(--font-sans); font-size: 0.85rem; color: var(--color-olive); margin-bottom: var(--space-lg);" id="menu-active-count">
+          0 Creations
+        </div>
+
+        <!-- Render Target Grid -->
+        <div class="menu-grid" id="menu-items-grid">
+          <!-- Dynamic rendering from js/menu.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

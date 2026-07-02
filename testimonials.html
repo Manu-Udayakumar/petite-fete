@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read client testimonials and watch video diaries of luxury culinary experiences curated by Petite Fête.">
+  <title>Client Stories | Petite Fête | Luxury Reviews</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Shutter Loading Screen -->
+  <div id="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo"><span>CLIENT DIARIES</span></div>
+      <div class="loader-bar-container">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-number">0%</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 160px; padding-bottom: var(--space-lg); background-color: var(--color-champagne);">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="editorial-subtitle">The Ledgers of Praise</span>
+        <h1 class="editorial-title" style="font-size: clamp(2.8rem, 6vw, 4.5rem);">Client Testimonials</h1>
+        <p class="editorial-paragraph" style="font-size: 1rem; color: var(--color-olive);">Reflections from hosts, partners, and couples who journeyed through our culinary scenographies.</p>
+      </div>
+    </section>
+
+    <!-- Slider Section -->
+    <section class="section">
+      <div class="container">
+        <div class="testimonial-wrapper">
+          <div class="testimonial-quote-icon">“</div>
+          
+          <div class="testimonial-slider" id="testimonial-slider">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide active">
+              <p class="testimonial-quote">"It was not catering. It was a cultural theater that our guests are still talking about weeks later. The binchotan charcoal station smelled like a high-end Tokyo alley, yet the service felt like a five-star hotel."</p>
+              <div class="testimonial-client">Charlotte & Pierre Laurent</div>
+              <div class="testimonial-event-type">Destination Wedding • Château de Tourreau, France</div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-slide">
+              <p class="testimonial-quote">"We partnered with Petite Fête for our product launch during Paris Design Week. The food styling matched the color values of our travertine furniture perfectly. Absolute design integrity."</p>
+              <div class="testimonial-client">Marcus Sterling, Creative Director</div>
+              <div class="testimonial-event-type">Brand Activation • Sterling Design Group</div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+              <p class="testimonial-quote">"Deconstructed Banarasi chaat served in clay kulhads on brass trays at a wedding in Ibiza... our guests were completely blown away. Aarav & Elena designed a sensory masterpiece."</p>
+              <div class="testimonial-client">Siddharth & Rhea Malhotra</div>
+              <div class="testimonial-event-type">Sunset Celebration • Private Estate, Ibiza</div>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="testimonial-nav">
+            <button class="testimonial-nav-btn hover-target" id="prev-slide" aria-label="Previous Slide">←</button>
+            <button class="testimonial-nav-btn hover-target" id="next-slide" aria-label="Next Slide">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Testimonial Capsules -->
+    <section class="section section-dark">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto var(--space-xl) auto;">
+          <span class="editorial-subtitle" style="color: var(--color-terracotta);">Cinematic Reels</span>
+          <h2 class="editorial-title" style="color: var(--color-ivory);">Film Diaries</h2>
+          <p class="editorial-paragraph" style="color: var(--color-olive);">Behind-the-scenes interviews with hosts and organizers, captured live during event wrap-ups.</p>
+        </div>
+
+        <div class="station-grid">
+          <!-- Video 1 -->
+          <div class="station-card" style="background-color: var(--color-charcoal-light); cursor: pointer;" onclick="alert('Playing Cinematic Diary capsule #01...');">
+            <div class="station-img-box">
+              <img src="assets/images/wedding_banquet.png" alt="Wedding video reel cover" class="station-img" style="filter: grayscale(1); opacity: 0.7;">
+              <!-- Play overlay -->
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border: 1px solid var(--color-ivory); border-radius: 50%; display: flex; justify-content: center; align-items: center; background-color: rgba(26,26,26,0.3);">
+                <span style="color: var(--color-ivory); font-size: 1.2rem; margin-left: 4px;">▶</span>
+              </div>
+            </div>
+            <div class="station-info-box" style="color: var(--color-ivory);">
+              <span class="station-tag">Château de Tourreau</span>
+              <h3 class="station-title" style="font-size: 1.3rem;">Charlotte & Pierre's Wedding Film</h3>
+              <p class="station-desc" style="color: var(--color-olive); font-size: 0.85rem;">Duration: 3m 45s • High-definition recap of the culinary timeline setup.</p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="station-card" style="background-color: var(--color-charcoal-light); cursor: pointer;" onclick="alert('Playing Cinematic Diary capsule #02...');">
+            <div class="station-img-box">
+              <img src="assets/images/corporate_cocktail.png" alt="Corporate cocktail video reel cover" class="station-img" style="filter: grayscale(1); opacity: 0.7;">
+              <!-- Play overlay -->
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; border: 1px solid var(--color-ivory); border-radius: 50%; display: flex; justify-content: center; align-items: center; background-color: rgba(26,26,26,0.3);">
+                <span style="color: var(--color-ivory); font-size: 1.2rem; margin-left: 4px;">▶</span>
+              </div>
+            </div>
+            <div class="station-info-box" style="color: var(--color-ivory);">
+              <span class="station-tag">Milan Design Week</span>
+              <h3 class="station-title" style="font-size: 1.3rem;">The Avant-Garde Brand Activation</h3>
+              <p class="station-desc" style="color: var(--color-olive); font-size: 0.85rem;">Duration: 2m 10s • Interviews with architects and brand representatives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script>
+    // Slider Navigation Script
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.testimonial-slide');
+      let currentIndex = 0;
+
+      const showSlide = (index) => {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[index].classList.add('active');
+      };
+
+      document.getElementById('prev-slide').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      document.getElementById('next-slide').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+    });
+  </script>
+</body>
+</html>
