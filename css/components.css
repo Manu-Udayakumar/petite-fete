@@ -301,7 +301,7 @@
   }
 }
 
-/* --- INTERACTIVE WORLD MAP --- */
+/* --- INTERACTIVE INDIA MAP --- */
 .map-page-container {
   display: flex;
   flex-direction: column;
@@ -312,62 +312,78 @@
 .map-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   margin: var(--space-xl) auto;
-  border: 1px solid var(--color-olive-light);
-  border-radius: 8px;
-  background-color: var(--color-champagne);
-  padding: var(--space-lg);
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.02);
 }
 
-.svg-world-map {
+.india-map-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--color-olive-light);
+  background-color: var(--color-champagne);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+.india-map-image {
   width: 100%;
   height: auto;
-  fill: #DCD4C7; /* Soft base for map land */
-  stroke: var(--color-ivory);
-  stroke-width: 0.5px;
+  display: block;
+  opacity: 0.9;
 }
 
-.map-pin {
+.india-map-pin {
+  position: absolute;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  z-index: 10;
 }
 
-.map-pin circle.pin-dot {
-  fill: var(--color-terracotta);
-  transition: fill 0.3s, r 0.3s;
+.india-map-pin .pin-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-terracotta);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.map-pin circle.pin-pulse {
-  fill: none;
-  stroke: var(--color-terracotta);
-  stroke-width: 1.5;
-  opacity: 0.8;
-  transform-origin: center;
+.india-map-pin .pin-pulse {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--color-terracotta);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
   animation: mapPulse 2s infinite ease-out;
+  pointer-events: none;
 }
 
-.map-pin:hover circle.pin-dot {
-  fill: var(--color-charcoal);
-  r: 8px;
+.india-map-pin:hover .pin-dot {
+  background-color: var(--color-charcoal);
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
-.map-pin.active circle.pin-dot {
-  fill: var(--color-olive);
-  r: 10px;
+.india-map-pin.active .pin-dot {
+  background-color: var(--color-olive);
+  transform: translate(-50%, -50%) scale(1.8);
 }
 
 @keyframes mapPulse {
   0% {
-    r: 4px;
+    transform: scale(0.3);
     opacity: 0.8;
-    stroke-width: 1.5;
   }
   100% {
-    r: 25px;
+    transform: scale(1.3);
     opacity: 0;
-    stroke-width: 0.2;
   }
 }
 
@@ -975,4 +991,533 @@
     grid-template-columns: 1fr;
     gap: 0;
   }
+}
+
+/* --- HORIZONTAL CARAVAN JOURNEY --- */
+.caravan-scroll-wrapper {
+  position: relative;
+  height: 400vh; /* Scroll length for 4 panels */
+  background-color: var(--color-charcoal);
+}
+
+.caravan-sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.caravan-horizontal-track {
+  display: flex;
+  width: 400vw; /* 4 slides, each 100vw */
+  height: 100%;
+  will-change: transform;
+}
+
+.caravan-slide {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 0 var(--space-xl);
+}
+
+/* Background overlay per slide to set regional hues */
+.caravan-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+/* Slide 1: North (Terracotta/Amber) */
+.caravan-slide-north {
+  background-color: #1a1512;
+}
+.caravan-slide-north::before {
+  background: radial-gradient(circle at 70% 30%, rgba(200, 95, 66, 0.15) 0%, transparent 70%);
+}
+
+/* Slide 2: West (Turquoise/Sand) */
+.caravan-slide-west {
+  background-color: #12171a;
+}
+.caravan-slide-west::before {
+  background: radial-gradient(circle at 30% 70%, rgba(66, 150, 160, 0.15) 0%, transparent 70%);
+}
+
+/* Slide 3: South (Emerald/Gold) */
+.caravan-slide-south {
+  background-color: #121a14;
+}
+.caravan-slide-south::before {
+  background: radial-gradient(circle at 80% 80%, rgba(85, 140, 90, 0.15) 0%, transparent 70%);
+}
+
+/* Slide 4: East (Marigold/Saffron) */
+.caravan-slide-east {
+  background-color: #1a1215;
+}
+.caravan-slide-east::before {
+  background: radial-gradient(circle at 40% 20%, rgba(210, 150, 50, 0.15) 0%, transparent 70%);
+}
+
+.caravan-content-box {
+  position: relative;
+  z-index: 5;
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.caravan-text-side {
+  color: var(--color-ivory);
+}
+
+.caravan-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.caravan-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: var(--color-ivory);
+  margin-bottom: var(--space-md);
+}
+
+.caravan-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-olive);
+  margin-bottom: var(--space-lg);
+}
+
+.caravan-dishes-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.caravan-dish-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-champagne);
+}
+
+.caravan-dish-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-terracotta);
+}
+
+.caravan-img-side {
+  position: relative;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caravan-featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-olive-light);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Floating 3D Spice Elements */
+.caravan-floating-spice {
+  position: absolute;
+  z-index: 10;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  filter: contrast(1.1) brightness(1.1) drop-shadow(0 15px 15px rgba(0,0,0,0.5));
+  will-change: transform;
+}
+
+/* Specific floating positions */
+.spice-cinnamon-1 {
+  bottom: 10%;
+  right: 5%;
+  width: 220px;
+  height: 220px;
+  transform: rotate(-15deg);
+}
+
+.spice-cinnamon-2 {
+  top: 15%;
+  left: 5%;
+  width: 140px;
+  height: 140px;
+  transform: rotate(45deg);
+}
+
+.spice-chili-1 {
+  bottom: 8%;
+  left: 8%;
+  width: 200px;
+  height: 200px;
+  transform: rotate(30deg);
+}
+
+.spice-cardamom-1 {
+  top: 12%;
+  right: 12%;
+  width: 160px;
+  height: 160px;
+  transform: rotate(-35deg);
+}
+
+.spice-saffron-1 {
+  bottom: 15%;
+  right: 15%;
+  width: 180px;
+  height: 180px;
+  transform: rotate(20deg);
+}
+
+/* Indicator dots representing scroll progress */
+.caravan-progress-indicator {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-md);
+  z-index: 20;
+}
+
+.caravan-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(244, 240, 230, 0.2);
+  transition: var(--transition-fast);
+}
+
+.caravan-dot.active {
+  background-color: var(--color-terracotta);
+  transform: scale(1.3);
+}
+
+@media (max-width: 992px) {
+  .caravan-content-box {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    text-align: center;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  .caravan-img-side {
+    height: 280px;
+  }
+  .caravan-dish-item {
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+  .caravan-floating-spice {
+    width: 100px;
+    height: 100px;
+  }
+  .spice-cinnamon-1, .spice-chili-1, .spice-cardamom-1, .spice-saffron-1 {
+    display: none; /* Hide secondary floaters on small viewports for legibility */
+  }
+}
+
+/* --- HOMEPAGE MAP-SCROLL JOURNEY --- */
+.map-scroll-wrapper {
+  position: relative;
+  background-color: var(--color-charcoal);
+  border-top: 1px solid var(--color-olive-light);
+  border-bottom: 1px solid var(--color-olive-light);
+}
+
+.map-scroll-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  min-height: 100vh;
+}
+
+.map-sticky-box {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--color-olive-light);
+  background-color: #151515;
+}
+
+.map-viewport {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.map-image-element {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+/* Map Interactive Pins */
+.map-scroll-pin {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: rgba(244, 240, 230, 0.3);
+  border: 1px solid var(--color-champagne);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.5s, transform 0.5s, box-shadow 0.5s;
+}
+
+.map-scroll-pin::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--color-terracotta);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.map-scroll-pin.active {
+  background-color: var(--color-terracotta);
+  transform: translate(-50%, -50%) scale(1.4);
+  box-shadow: 0 0 15px var(--color-terracotta);
+}
+
+.map-scroll-pin.active::after {
+  opacity: 1;
+  transform: scale(1);
+  animation: pinPulse 2s infinite;
+}
+
+@keyframes pinPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.map-scroll-label {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -6px);
+  background-color: rgba(26, 26, 26, 0.8);
+  border: 1px solid var(--color-olive-light);
+  color: var(--color-ivory);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.map-scroll-pin.active .map-scroll-label {
+  opacity: 1;
+  color: var(--color-terracotta);
+  background-color: rgba(26, 26, 26, 0.95);
+}
+
+.map-scroll-track {
+  padding: 15vh var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 20vh; /* Large gaps so only one card is active at a time */
+}
+
+.map-scroll-card {
+  opacity: 0.2;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+  padding: var(--space-xl);
+  background-color: var(--color-charcoal-light);
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+}
+
+.map-scroll-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  border-left-color: var(--color-terracotta);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.map-card-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.map-card-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-ivory);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+}
+
+.map-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-olive);
+  margin-bottom: var(--space-md);
+}
+
+.map-card-item {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-champagne);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 992px) {
+  .map-scroll-container {
+    grid-template-columns: 1fr;
+  }
+  .map-sticky-box {
+    position: sticky;
+    top: 60px; /* Below header */
+    height: 350px;
+    z-index: 100;
+    border-right: none;
+    border-bottom: 1px solid var(--color-olive-light);
+  }
+  .map-viewport {
+    height: 90%;
+  }
+  .map-scroll-track {
+    padding: var(--space-xl);
+    gap: var(--space-xl);
+  }
+  .map-scroll-card {
+    opacity: 0.9;
+    transform: none;
+  }
+}
+
+/* --- POPUP CONCEPTS --- */
+.popups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.popup-card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(244, 240, 230, 0.08);
+  padding: var(--space-lg);
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+  backdrop-filter: blur(10px);
+}
+
+.popup-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  border-color: var(--color-terracotta);
+}
+
+.popup-icon-tag {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  border: 1px solid var(--color-terracotta);
+  padding: 2px 6px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+
+/* --- CLIENT ROSTER TICKER --- */
+.client-ticker-wrapper {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-champagne);
+  padding: var(--space-md) 0;
+  border-top: 1px solid var(--color-olive-light);
+  border-bottom: 1px solid var(--color-olive-light);
+}
+
+.client-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 35s linear infinite;
+  gap: 80px;
+  align-items: center;
+}
+
+.client-ticker-item {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--color-olive);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

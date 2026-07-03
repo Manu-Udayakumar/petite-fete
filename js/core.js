@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Initialize Scroll Reveals
   initScrollReveals();
+
+  // 6. Initialize Homepage Map-Scroll Journey
+  initMapScroll();
 });
 
 // Layout Injection Function
@@ -23,15 +26,16 @@ function injectSharedLayout() {
   const pageName = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
 
   // Determine if header should start dark/transparent (like on Home page with full hero)
-  const isDarkHeader = pageName === 'index.html' || pageName === 'global.html';
+  const isDarkHeader = pageName === 'index.html' || pageName === 'india.html';
 
   // Create Header Markup
   const header = document.createElement('header');
   header.className = `global-header ${isDarkHeader ? 'global-header-dark' : ''}`;
   header.innerHTML = `
     <div class="container header-container">
-      <div class="header-logo">
-        <a href="index.html" class="hover-target">PETITE FÊTE</a>
+      <div class="header-logo" style="display: flex; align-items: center; gap: var(--space-sm);">
+        <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 52px; width: 52px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));">
+        <a href="index.html" class="hover-target" style="letter-spacing: 0.15em; font-size: 1.25rem; font-weight: 500;">THE CULINARY CANVAS</a>
       </div>
       <div class="header-actions">
         <a href="contact.html" class="inquiry-btn hover-target">Plan An Event</a>
@@ -51,10 +55,22 @@ function injectSharedLayout() {
   drawer.innerHTML = `
     <div class="drawer-content">
       <ul class="drawer-links">
-            <li><a href="index.html" class="hover-target ${pageName === 'index.html' ? 'active' : ''}">Home</a></li>
-            <li><a href="about.html" class="hover-target ${pageName === 'about.html' ? 'active' : ''}">About</a></li>
-            <li><a href="journeys.html" class="hover-target ${pageName === 'journeys.html' ? 'active' : ''}">Culinary Journeys</a></li>
-            <li><a href="menu.html" class="hover-target ${pageName === 'menu.html' ? 'active' : ''}">Menu Collection</a>
+        <li><a href="index.html" class="hover-target ${pageName === 'index.html' ? 'active' : ''}">Home</a></li>
+        <li><a href="about.html" class="hover-target ${pageName === 'about.html' ? 'active' : ''}">About</a></li>
+        <li><a href="journeys.html" class="hover-target ${pageName === 'journeys.html' ? 'active' : ''}">Culinary Journeys</a></li>
+        <li><a href="menu.html" class="hover-target ${pageName === 'menu.html' ? 'active' : ''}">Menu Collection</a></li>
+        <li><a href="india.html" class="hover-target ${pageName === 'india.html' ? 'active' : ''}">Interactive Map</a></li>
+        <li><a href="contact.html" class="hover-target ${pageName === 'contact.html' ? 'active' : ''}">Contact</a></li>
+      </ul>
+      <div class="drawer-info">
+        <p class="drawer-editorial">"The street food culture of India & the world, elevated into a Michelin-inspired, luxury culinary experience."</p>
+        <div class="drawer-contact-details">
+          <p>INQUIRIES: <a href="mailto:curator@theculinarycanvas.co" class="hover-target">curator@theculinarycanvas.co</a></p>
+          <p>PHONE: +91 98100 55555 / +91 11 4655 8888</p>
+          <p>STUDIOS: NEW DELHI • MUMBAI • RAJASTHAN</p>
+          <p>ADDRESS: The Culinary Pavilion, Chanakyapuri, New Delhi, India</p>
+        </div>
+      </div>
     </div>
   `;
 
@@ -65,9 +81,12 @@ function injectSharedLayout() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h2>PETITE FÊTE</h2>
-          <p style="font-size: 0.75rem; letter-spacing: 0.05em; color: var(--color-terracotta); margin-bottom: var(--space-xs); text-transform: uppercase;">A Unit of Food Art Hospitality Pvt. Ltd. • From the House of Girdhars</p>
-          <p>Curators of luxury, culture-rich culinary experiences and elevated street food journeys, based in New Delhi, India. <br><strong style="color: var(--color-ivory);">"Your Vision, Our Passion!"</strong></p>
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
+            <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 64px; width: 64px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+            <h2 style="margin-bottom: 0; font-size: 1.6rem; letter-spacing: 0.15em;">THE CULINARY CANVAS</h2>
+          </div>
+          <p style="font-size: 0.75rem; letter-spacing: 0.05em; color: var(--color-terracotta); margin-bottom: var(--space-xs); text-transform: uppercase;">From the House of Girdhars</p>
+          <p>Curators of luxury, culture-rich culinary experiences and elevated street food journeys, based in New Delhi, India. <br><strong style="color: var(--color-ivory); font-style: italic;">"Your Vision, Our Passion!"</strong></p>
         </div>
         <div class="footer-col">
           <h3>The Brand</h3>
@@ -89,7 +108,7 @@ function injectSharedLayout() {
         </div>
         <div class="footer-col">
           <h3>Subscribe</h3>
-          <p style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-olive);">Receive invitations to secret popup culinary galleries.</p>
+          <p style="margin-bottom: var(--space-sm); font-size: 0.85rem; color: var(--color-olive);">Receive invitations to private preview events.</p>
           <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci! You have been added to our private ledger.');">
             <input type="email" placeholder="Your Email Address" required class="hover-target">
             <button type="submit" class="newsletter-submit hover-target">→</button>
@@ -97,7 +116,7 @@ function injectSharedLayout() {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Petite Fête India Ltd. All rights reserved.</p>
+        <p>© 2026 The Culinary Canvas India. All rights reserved.</p>
         <p>Awwwards Design Inspiration • Privacy Policy • T&C</p>
       </div>
     </div>
@@ -330,3 +349,73 @@ function initScrollReveals() {
     });
   });
 }
+
+// Homepage Topographical Map-Scroll Journey
+function initMapScroll() {
+  const track = document.getElementById('map-scroll-track');
+  const viewport = document.getElementById('map-viewport-target');
+  const cards = document.querySelectorAll('.map-scroll-card');
+  const pins = document.querySelectorAll('.map-scroll-pin');
+
+  if (!track || !viewport) return;
+
+  function handleScroll() {
+    const viewHeight = window.innerHeight;
+    const triggerPoint = viewHeight * 0.45; // Center of screen trigger point
+
+    let activeCard = null;
+
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
+        activeCard = card;
+      }
+    });
+
+    if (activeCard) {
+      // Deactivate all
+      cards.forEach(c => c.classList.remove('active'));
+      pins.forEach(p => p.classList.remove('active'));
+
+      // Activate current
+      activeCard.classList.add('active');
+      const region = activeCard.getAttribute('data-region');
+      const zoom = activeCard.getAttribute('data-zoom') || '1.5';
+      const x = activeCard.getAttribute('data-x') || '0';
+      const y = activeCard.getAttribute('data-y') || '0';
+
+      const activePin = document.querySelector(`.map-scroll-pin[data-region="${region}"]`);
+      if (activePin) {
+        activePin.classList.add('active');
+      }
+
+      // Pan & Zoom the Map Viewport smoothly using translate3d & scale
+      viewport.style.transform = `scale(${zoom}) translate3d(${x}%, ${y}%, 0)`;
+    }
+  }
+
+  // Bind pins to click scroll to active card
+  pins.forEach(pin => {
+    pin.addEventListener('click', () => {
+      const region = pin.getAttribute('data-region');
+      const targetCard = document.querySelector(`.map-scroll-card[data-region="${region}"]`);
+      if (targetCard) {
+        const offset = targetCard.getBoundingClientRect().top + window.scrollY - (window.innerHeight * 0.35);
+        window.scrollTo({
+          top: offset,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    requestAnimationFrame(handleScroll);
+  });
+  window.addEventListener('resize', handleScroll);
+
+  // Initialize
+  handleScroll();
+}
+
+

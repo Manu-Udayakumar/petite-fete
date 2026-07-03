@@ -1,54 +1,64 @@
 /* js/map.js */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initWorldMap();
+  initIndiaMap();
 });
 
 const culinaryDestinations = {
-  india: {
-    country: "INDIA",
-    title: "The Royal Spice Galleys",
-    desc: "Experience deconstructed Banarasi chaat served in custom-styled kulhads, saffron-infused lamb biryanis, and golden saffron rabdi. Recreated with historical spices and modern culinary flair."
+  delhi: {
+    region: "NORTHERN PLAINS",
+    title: "Classic Delhi Tales",
+    desc: "Assorted English vegetable tawa chaat tossed live, soufflé-textured Moonglets, and authentic street-style Aloo Tikki served with hot spiced Chole."
   },
-  mexico: {
-    country: "MEXICO",
-    title: "Oaxacan Masa & Agave Gallery",
-    desc: "Wood-fired artisanal tlayudas topped with structural avocado, dry-aged wagyu flank steak, and rare dark mole. Accompanied by premium wild agave mezcal pairings."
+  agra: {
+    region: "TAJ CORRIDOR",
+    title: "Flavors of Agra",
+    desc: "Delicate suji pani-puris served with flavored botanical waters, Kesari Dahi Bhallas garnished with gold saffron strings, and paper-thin griddled chillas."
   },
-  france: {
-    country: "FRANCE",
-    title: "Parisian Crêperie & Caviar Gallery",
-    desc: "A luxury interpretation of Parisian street crêpes. Buckwheat galettes styled with Royal Oscietra caviar, hand-whipped crème fraîche, and organic chive blossoms."
+  rajasthan: {
+    region: "DESERT ROYALTY",
+    title: "From the Land of Rajas",
+    desc: "Deep-fried Ajmeri Kadhi Kachodi served with yogurt gravy, fermented Kanji Wada prepared in clay pots, and Paneer Laung Lata parcels cooked in silky gravy."
   },
-  japan: {
-    country: "JAPAN",
-    title: "The Ginza Yakitori & Robata",
-    desc: "Skewers of bluefin tuna belly (otoro) glaze-brushed with vintage shoyu and truffle-infused honey, grilled live over binchotan white charcoal in front of the guests."
+  mumbai: {
+    region: "WESTERN COASTLINE",
+    title: "Mumbai Chowpatty",
+    desc: "Butter-laden Pav Bhaji cooked live on large circular tawas, Vada Pav served with spicy red garlic dust, and crisp Sev Puris assembled instantly."
   },
-  morocco: {
-    country: "MOROCCO",
-    title: "Marrakesh Medina Tagines",
-    desc: "Slow-simmered confit duck leg tagines with caramelized figs, toasted almonds, and organic orange blossom couscous. Presented on artisan brass platters."
+  haridwar: {
+    region: "SACRED FOOTHILLS",
+    title: "The Holy City of Haridwar",
+    desc: "Delicate whipped urad dal Dahi Gujiyas topped with sweet tamarind, and crispy griddled Aloo Tikki accompanied with slow-simmered Dum Aloo."
   },
-  italy: {
-    country: "ITALY",
-    title: "Napoli Artisan Truffle Hearth",
-    desc: "Neapolitan wood-fired pizzetta featuring organic buffalo mozzarella, wild forest mushrooms, fresh shavings of white Alba truffles, and gold leaf droplets."
+  indore: {
+    region: "HEART OF INDORE",
+    title: "Smart City Indore",
+    desc: "Indore's famous Bhutte Ki Khees slow-cooked in milk, savory Sabutdane Ki Chaat topped with salli, and crispy fried Garadu roots dusted with rare spices."
   },
-  thailand: {
-    country: "THAILAND",
-    title: "Bangkok Canal Seafood Robata",
-    desc: "Lobster tail satay marinated in fresh lemongrass and galangal, flame-seared on bamboo skewers and served with micro-coriander and house roasted peanut emulsion."
+  banaras: {
+    region: "HOLY GANGES",
+    title: "Banarasi Chatkara",
+    desc: "Crispy Palak Patte Ki Chaat plated geometrically, mashed Tamatar Ki Chaat served in kulhads with hot ghee, and fresh milk-soaked Churaa Matar."
   },
-  spain: {
-    country: "SPAIN",
-    title: "San Sebastián Tapas & Crudos",
-    desc: "Liquid nitrogen gazpacho spheres, 36-month Jamón Ibérico de Bellota sliced live from the leg, and red prawns from Palamós marinated in citrus oils."
+  gujarat: {
+    region: "SAURASHTRA PLAINS",
+    title: "Flavors of Gujarat",
+    desc: "Buttery Kutchi Dabeli topped with pomegranates, thin leaf-steamed Pankis, and fluffy Dhoklas garnished with mustard seed temper."
+  },
+  moradabad: {
+    region: "BRASS HUB",
+    title: "Moradabad Special",
+    desc: "Slow-simmered Dal Moradabadi served hot, allowing guests to custom-tailor toppings (chopped ginger, chilies, cumin dust) at a hammered-copper counter."
+  },
+  kanpur: {
+    region: "UPPER GANGETIC",
+    title: "Nawabi Kanpur",
+    desc: "Savory hand-pressed Safed Channe Ki Tikki patties and vertical towers of layered Garbad Chaat served with tall spoons in glassware."
   }
 };
 
-function initWorldMap() {
-  const pins = document.querySelectorAll('.map-pin');
+function initIndiaMap() {
+  const pins = document.querySelectorAll('.india-map-pin');
   const card = document.getElementById('map-overlay-card');
   const cardCountry = document.getElementById('map-card-country');
   const cardTitle = document.getElementById('map-card-title');
@@ -70,7 +80,7 @@ function initWorldMap() {
         card.classList.remove('visible');
         
         setTimeout(() => {
-          cardCountry.textContent = data.country;
+          cardCountry.textContent = data.region;
           cardTitle.textContent = data.title;
           cardDesc.textContent = data.desc;
           card.classList.add('visible');
@@ -81,15 +91,15 @@ function initWorldMap() {
 
   // Close card when clicking outside pins
   document.addEventListener('click', (e) => {
-    if (!e.target.closest('.map-pin') && !e.target.closest('#map-overlay-card')) {
+    if (!e.target.closest('.india-map-pin') && !e.target.closest('#map-overlay-card')) {
       card.classList.remove('visible');
       pins.forEach(p => p.classList.remove('active'));
     }
   });
 
-  // Activate India by default as a teaser after loading
+  // Activate Delhi by default as a teaser after loading
   setTimeout(() => {
-    const defaultPin = document.querySelector('.map-pin[data-destination="india"]');
+    const defaultPin = document.querySelector('.india-map-pin[data-destination="delhi"]');
     if (defaultPin) defaultPin.dispatchEvent(new Event('click'));
   }, 1800);
 }

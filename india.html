@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore The Culinary Canvas's interactive Indian street food map highlighting curated regional specialties.">
+  <title>Interactive Region Map | The Culinary Canvas | Luxury Curation</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Shutter Loading Screen -->
+  <div id="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo"><span>THE MAP LEDGER</span></div>
+      <div class="loader-bar-container">
+        <div class="loader-bar"></div>
+      </div>
+      <div class="loader-number">0%</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 160px; padding-bottom: var(--space-md); background-color: var(--color-champagne);">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="editorial-subtitle">The Culinary Canvas Atlas</span>
+        <h1 class="editorial-title" style="font-size: clamp(2.8rem, 6vw, 4.5rem);">Interactive Region Map</h1>
+        <p class="editorial-paragraph" style="font-size: 1rem; color: var(--color-olive);">We trace the local streets and historical corners of India, elevating regional street classics into luxury theater setups. Click on the pins to explore the specialties.</p>
+      </div>
+    </section>
+
+    <!-- Map Container -->
+    <section class="section">
+      <div class="container">
+        <div class="map-wrapper">
+          
+          <div class="india-map-container">
+            <img src="assets/images/india_map.svg?v=5" alt="Stylized Architectural Map of India" class="india-map-image">
+            
+            <!-- Absolute Positioned pins on top of India map -->
+            <!-- Delhi Pin -->
+            <div class="india-map-pin hover-target" style="top: 25%; left: 46%;" data-destination="delhi">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Agra Pin -->
+            <div class="india-map-pin hover-target" style="top: 31%; left: 49%;" data-destination="agra">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Rajasthan Pin -->
+            <div class="india-map-pin hover-target" style="top: 34%; left: 36%;" data-destination="rajasthan">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Mumbai Pin -->
+            <div class="india-map-pin hover-target" style="top: 60%; left: 30%;" data-destination="mumbai">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Haridwar Pin -->
+            <div class="india-map-pin hover-target" style="top: 20%; left: 49%;" data-destination="haridwar">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Indore Pin -->
+            <div class="india-map-pin hover-target" style="top: 48%; left: 41%;" data-destination="indore">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Banaras Pin -->
+            <div class="india-map-pin hover-target" style="top: 38%; left: 62%;" data-destination="banaras">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Gujarat Pin -->
+            <div class="india-map-pin hover-target" style="top: 47%; left: 24%;" data-destination="gujarat">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Moradabad Pin -->
+            <div class="india-map-pin hover-target" style="top: 24%; left: 51%;" data-destination="moradabad">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+
+            <!-- Kanpur Pin -->
+            <div class="india-map-pin hover-target" style="top: 34%; left: 54%;" data-destination="kanpur">
+              <div class="pin-pulse"></div>
+              <div class="pin-dot"></div>
+            </div>
+          </div>
+
+          <!-- Interactive Details Card Overlay -->
+          <div class="map-overlay-card" id="map-overlay-card">
+            <div class="map-card-country" id="map-card-country">REGION</div>
+            <h2 class="map-card-title" id="map-card-title">Destination Title</h2>
+            <p class="map-card-desc" id="map-card-desc">Culinary details go here...</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional info columns -->
+    <section class="section" style="border-top: 1px solid var(--color-olive-light);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+          <div>
+            <span class="editorial-subtitle">The Sourcing Ethos</span>
+            <h2 class="editorial-title">How We Map Flavors</h2>
+            <p class="editorial-paragraph">Every station setup begins with direct research. We study local preparations from vendors across regional hubs, reinterpreting their core flavor balance using advanced culinary arts while retaining absolute taste fidelity.</p>
+          </div>
+          <div>
+            <span class="editorial-subtitle">Visual Scenography</span>
+            <h2 class="editorial-title">Atmospheric Context</h2>
+            <p class="editorial-paragraph">We recreate the ambient essence of each regional market through tailored sensory elements—bespoke clay work, custom scents, and architectural station designs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/core.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

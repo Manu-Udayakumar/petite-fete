@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Petite Fête is a luxury culinary experience brand curating immersive global street food journeys for extraordinary celebrations.">
-  <title>Petite Fête | A Unit of Food Art Hospitality Pvt. Ltd. | From the House of Girdhars</title>
+  <meta name="description" content="The Culinary Canvas is a luxury culinary experience brand curating immersive street food journeys for extraordinary celebrations.">
+  <title>The Culinary Canvas | From the House of Girdhars</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
+<body style="background-color: #111111; color: var(--color-ivory);">
 
   <!-- Shutter Loading Screen -->
   <div id="loader-overlay">
     <div class="loader-content">
-      <div class="loader-logo"><span>PETITE FÊTE</span></div>
+      <div class="loader-logo"><span>THE CULINARY CANVAS</span></div>
       <div class="loader-bar-container">
         <div class="loader-bar"></div>
       </div>
@@ -33,99 +33,356 @@
         <h1 class="hero-title">The World's Street Food, Curated For Extraordinary Celebrations.</h1>
         <div class="hero-cta" style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; margin-top: var(--space-lg);">
           <a href="contact.html" class="btn-luxury-solid hover-target">Request A Curated Proposal</a>
-          <a href="assets/petite-fete-menu.pdf" download class="btn-luxury-solid hover-target" style="background-color: transparent; border: 1px solid var(--color-champagne); color: var(--color-champagne);">Download Menu Ledger (PDF)</a>
+          <a href="assets/the-culinary-canvas-menu.pdf" download class="btn-luxury-solid hover-target" style="background-color: transparent; border: 1px solid var(--color-champagne); color: var(--color-champagne);">Download Menu Ledger (PDF)</a>
         </div>
       </div>
     </section>
 
-    <!-- Brand Introduction -->
-    <section class="section">
+    <!-- Welcome Reverence Philosophy Section -->
+    <section class="section" style="background-color: #141414; text-align: center; padding-top: var(--space-xl); padding-bottom: var(--space-xl); border-bottom: 1px solid rgba(244, 240, 230, 0.05);">
+      <div class="container" style="max-width: 850px; margin: 0 auto;">
+        <span class="editorial-subtitle">The Welcome Reverence</span>
+        <h2 class="editorial-title" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: var(--space-md); color: var(--color-ivory);">"The best way to deliver the immense love to our guests is by serving them with warmth & affection."</h2>
+        <p class="editorial-paragraph" style="font-size: 1.1rem; line-height: 1.8; color: var(--color-olive);">From the moment you step in till the moment you step out, we aim to make your event as memorable as the occasion is to you. Our dedicated service crew will serve your guests with the most delightful recipes to rejuvenate and enliven their spirits, marking their presence for this phenomenal culinary trip.</p>
+        <div style="font-family: var(--font-serif); font-style: italic; font-size: 1.25rem; color: var(--color-terracotta); margin-top: var(--space-md);">
+          — House of Girdhars
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Topographical Map-Scroll Journey -->
+    <section class="map-scroll-wrapper" style="background-color: #111111; border: none;">
+      <div class="map-scroll-container">
+        <!-- Sticky Map Window (Left Pane) -->
+        <div class="map-sticky-box" style="background-color: #111111; border-right: 1px solid rgba(244, 240, 230, 0.05);">
+          <div class="map-viewport" id="map-viewport-target">
+            <img src="assets/images/india_map.svg?v=5" alt="Interactive India Culinary Map" class="map-image-element">
+            
+            <!-- Map Pin Hotspots -->
+            <div class="map-scroll-pin active" style="top: 31%; left: 44%;" data-region="delhi">
+              <span class="map-scroll-label">Delhi</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 35%; left: 47%;" data-region="agra">
+              <span class="map-scroll-label">Agra</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 38%; left: 34%;" data-region="rajasthan">
+              <span class="map-scroll-label">Rajasthan</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 26%; left: 48%;" data-region="haridwar">
+              <span class="map-scroll-label">Haridwar</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 50%; left: 40%;" data-region="indore">
+              <span class="map-scroll-label">Indore</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 64%; left: 31%;" data-region="mumbai">
+              <span class="map-scroll-label">Mumbai</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 51%; left: 26%;" data-region="gujarat">
+              <span class="map-scroll-label">Gujarat</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 29%; left: 51%;" data-region="moradabad">
+              <span class="map-scroll-label">Moradabad</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 42%; left: 60%;" data-region="banaras">
+              <span class="map-scroll-label">Banaras</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 49%; left: 77%;" data-region="kolkata">
+              <span class="map-scroll-label">Kolkata</span>
+            </div>
+            <div class="map-scroll-pin" style="top: 80%; left: 48%;" data-region="deccan">
+              <span class="map-scroll-label">Deccan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrollable Regional Content Cards (Right Pane) -->
+        <div class="map-scroll-track" id="map-scroll-track">
+          
+          <!-- Delhi Card -->
+          <div class="map-scroll-card active" data-region="delhi" data-zoom="1.8" data-x="-5" data-y="10">
+            <span class="map-card-subtitle">METROPOLITAN CLASSICS</span>
+            <h3 class="map-card-title">Classic Delhi Tales</h3>
+            <p class="map-card-desc">Delhi is a food lover’s paradise, presenting a muddled mix of cultures. Experience our modern vegetable griddle creations and comforting street fries served under a cloud of herb smoke.</p>
+            <div class="map-card-item">English Tawa Chaat</div>
+            <div class="map-card-item">Moong Dal Ladoo with Mooli Lachha</div>
+            <div class="map-card-item">Moonglet on Hot Plate</div>
+          </div>
+
+          <!-- Agra Card -->
+          <div class="map-scroll-card" data-region="agra" data-zoom="2.2" data-x="-8" data-y="5">
+            <span class="map-card-subtitle">ROYAL MUGHAL ROUTE</span>
+            <h3 class="map-card-title">Flavors of Agra</h3>
+            <p class="map-card-desc">Reflecting the grand spirit of the Taj Mahal. Agra's heritage is brought to life through saffron-infused yogurt cakes, dry-fruit Makhanas, and crisp tawa chillas.</p>
+            <div class="map-card-item">Kesari Dahi Bhalla</div>
+            <div class="map-card-item">Dry Fruit Dahi Makhana Chaat</div>
+            <div class="map-card-item">Khasta Aloo Tikki</div>
+          </div>
+
+          <!-- Rajasthan Card -->
+          <div class="map-scroll-card" data-region="rajasthan" data-zoom="1.8" data-x="10" data-y="5">
+            <span class="map-card-subtitle">THE LAND OF RAJAS</span>
+            <h3 class="map-card-title">Rajasthani Heritage</h3>
+            <p class="map-card-desc">Influenced by royal fort lifestyles and desert ingredients. Indulge in traditional lentil baskets, fermented mustard curries, and hand-crushed papad churi.</p>
+            <div class="map-card-item">Basket Chaat Platter</div>
+            <div class="map-card-item">Ajmeri Kadhi Kachodi</div>
+            <div class="map-card-item">Kanji Wada in Clay Pots</div>
+          </div>
+
+          <!-- Haridwar Card -->
+          <div class="map-scroll-card" data-region="haridwar" data-zoom="2.2" data-x="-10" data-y="12">
+            <span class="map-card-subtitle">SACRED RIVERBANKS</span>
+            <h3 class="map-card-title">The Holy City of Haridwar</h3>
+            <p class="map-card-desc">Simple yet unique street creations. Our signature Urad Dal Gujiyas are soaked in sweet, chilled curd and garnished live with pomegranate jewels and ginger juliennes.</p>
+            <div class="map-card-item">Dahi Gujiya with Saffron</div>
+            <div class="map-card-item">Aloo Tikki with Dum Aloo</div>
+          </div>
+
+          <!-- Indore Card -->
+          <div class="map-scroll-card" data-region="indore" data-zoom="2.0" data-x="5" data-y="-10">
+            <span class="map-card-subtitle">SARAFA BAZAAR SECRETS</span>
+            <h3 class="map-card-title">Smart City Indore</h3>
+            <p class="map-card-desc">Indore's late-night food markets are legendary. Discover Bhutte Ki Khees, a fresh sweet-corn grated pudding, alongside double-fried yams and crunchy sago tosses.</p>
+            <div class="map-card-item">Bhutte Ki Khees (Corn Polenta)</div>
+            <div class="map-card-item">Sabutdane Ki Chaat with Straw Potatoes</div>
+            <div class="map-card-item">Garadu Chaat with Rare Spices</div>
+          </div>
+
+          <!-- Mumbai Card -->
+          <div class="map-scroll-card" data-region="mumbai" data-zoom="1.9" data-x="12" data-y="-20">
+            <span class="map-card-subtitle">CHOWPATTY BREEZE</span>
+            <h3 class="map-card-title">Mumbai Chowpatty</h3>
+            <p class="map-card-desc">The vibrant, bustling seaside energy of Mumbai's coast. Hand-pressed potato dumplings inside buttered buns, and rich vegetable curries cooked on giant iron tawas.</p>
+            <div class="map-card-item">Pav Bhaji with Soft Pav</div>
+            <div class="map-card-item">Vada Pav with Garlic Dry Chutney</div>
+            <div class="map-card-item">Sev Puri with Tangy Tamarind</div>
+          </div>
+
+          <!-- Gujarat Card -->
+          <div class="map-scroll-card" data-region="gujarat" data-zoom="1.7" data-x="18" data-y="-10">
+            <span class="map-card-subtitle">GUJARATI FARSAN</span>
+            <h3 class="map-card-title">Gujarat Chronicles</h3>
+            <p class="map-card-desc">A delicate balance of sweet, spicy, and sour. Panki steamed batter cooked inside fresh banana leaves, and soft, fluffy Dhoklas elevated into a refreshing chaat.</p>
+            <div class="map-card-item">Banana Leaf Panki</div>
+            <div class="map-card-item">Kutchi Dabeli with Pomegranate</div>
+            <div class="map-card-item">Dhokla Chaat with Curry Leaves</div>
+          </div>
+
+          <!-- Moradabad Card -->
+          <div class="map-scroll-card" data-region="moradabad" data-zoom="2.2" data-x="-12" data-y="8">
+            <span class="map-card-subtitle">RAMGANGA RIVERBANKS</span>
+            <h3 class="map-card-title">Moradabad Dal Craft</h3>
+            <p class="map-card-desc">A heavy regional focus on moong lentil flavors. Our famous Moradabadi Dal is a creamy blend of yellow lentils seasoned to order with butter, cumin, and mint chutney.</p>
+            <div class="map-card-item">Dal Moradabadi Chaat</div>
+            <div class="map-card-item">Chopped Ginger & Coriander Toppings</div>
+          </div>
+
+          <!-- Banaras Card -->
+          <div class="map-scroll-card" data-region="banaras" data-zoom="1.8" data-x="-15" data-y="0">
+            <span class="map-card-subtitle">SPIRITUAL CHATKARAS</span>
+            <h3 class="map-card-title">Banarasi Chatkara</h3>
+            <p class="map-card-desc">Tangy, spicy, and deeply comforting. Crisp chickpea-stuffed kachoris served in kulhads, hot papad cones, and milk-soaked green pea poha.</p>
+            <div class="map-card-item">Palak Patte Ki Chaat</div>
+            <div class="map-card-item">Tamatar Ki Chaat with Ghee Gravy</div>
+            <div class="map-card-item">Churaa Matar (Milk-Soaked Poha)</div>
+          </div>
+
+          <!-- Kolkata Card -->
+          <div class="map-scroll-card" data-region="kolkata" data-zoom="1.6" data-x="-25" data-y="-5">
+            <span class="map-card-subtitle">CHARISMATIC ESTUARY</span>
+            <h3 class="map-card-title">Kolkata Street Collective</h3>
+            <p class="map-card-desc">The City of Joy offers unmatched flavor profiles. Experience hollow puchka shells served with sour tamarind and sweet mint water, and fresh puffed rice tossed with raw mustard oil.</p>
+            <div class="map-card-item">Kolkata Puchka with Tetul Jol</div>
+            <div class="map-card-item">Authentic Jhalmuri in Paper Cones</div>
+            <div class="map-card-item">Churmur (Crumbled Puchka Chaat)</div>
+          </div>
+
+          <!-- Deccan Card -->
+          <div class="map-scroll-card" data-region="deccan" data-zoom="1.3" data-x="-5" data-y="-30">
+            <span class="map-card-subtitle">SOUTHERN PLAINS</span>
+            <h3 class="map-card-title">Deccan Specialties</h3>
+            <p class="map-card-desc">Delicacies from Deccan India. Aromatic curry leaves, stone-ground appams swirled live, and comforting coconut stew preparations.</p>
+            <div class="map-card-item">Crispy Appam with Vegetable Stew</div>
+            <div class="map-card-item">Andhra Style Veg Korma</div>
+            <div class="map-card-item">Bisi Bele Baath with Hot Ghee</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bespoke Popup Concepts Showcase -->
+    <section class="section" style="background-color: #141414; border-top: 1px solid rgba(244, 240, 230, 0.05); border-bottom: 1px solid rgba(244, 240, 230, 0.05);">
       <div class="container">
-        <div class="editorial-split">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto var(--space-xl) auto;">
+          <span class="editorial-subtitle">The Concepts</span>
+          <h2 class="editorial-title" style="color: var(--color-ivory);">Signature Popup Restaurants</h2>
+          <p class="editorial-paragraph" style="color: var(--color-olive);">We bring trendsetting dining formats to your celebrations, transforming venues into active gourmet hubs.</p>
+        </div>
+
+        <div class="popups-grid">
+          <!-- Concept 1 -->
+          <div class="popup-card">
+            <span class="popup-icon-tag">Gourmet Spices</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--color-ivory);">The Spice Cube</h3>
+            <p class="editorial-paragraph" style="font-size: 0.9rem; line-height: 1.6; color: var(--color-olive);">A high-concept installation focusing on the complex geometry of Indian spices, serving freshly toasted griddle wraps and regional dry curries.</p>
+          </div>
+
+          <!-- Concept 2 -->
+          <div class="popup-card">
+            <span class="popup-icon-tag">Modern Asian</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--color-ivory);">The Oriental Kitchen</h3>
+            <p class="editorial-paragraph" style="font-size: 0.9rem; line-height: 1.6; color: var(--color-olive);">Featuring an interactive revolving magnet rail that moves dim sums and customized gyozas right in front of your eyes.</p>
+          </div>
+
+          <!-- Concept 3 -->
+          <div class="popup-card">
+            <span class="popup-icon-tag">European Fusion</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--color-ivory);">Classic Italiano</h3>
+            <p class="editorial-paragraph" style="font-size: 0.9rem; line-height: 1.6; color: var(--color-olive);">Pizzerias with hand-tossed thin crusts cooked in dome stone ovens, and fresh raviolis swirled inside giant Parmesan cheese wheels.</p>
+          </div>
+
+          <!-- Concept 4 -->
+          <div class="popup-card">
+            <span class="popup-icon-tag">Middle Eastern</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--color-ivory);">Al-Habibi</h3>
+            <p class="editorial-paragraph" style="font-size: 0.9rem; line-height: 1.6; color: var(--color-olive);">Bespoke Mediterranean and Levantine setups, serving fresh pita pockets, charred pineapples, and gourmet hummus stations.</p>
+          </div>
+
+          <!-- Concept 5 -->
+          <div class="popup-card">
+            <span class="popup-icon-tag">Artisanal Bread</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: var(--space-sm); color: var(--color-ivory);">Rottisattva</h3>
+            <p class="editorial-paragraph" style="font-size: 0.9rem; line-height: 1.6; color: var(--color-olive);">A dedicated flatbread gallery showing the wheat-work legacy, firing tandoori rotis, biscuit bhakhris, and layered paranthas live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Girdhar Family Heritage / Leadership -->
+    <section class="section" style="background-color: #111111;">
+      <div class="container">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto var(--space-xl) auto;">
+          <span class="editorial-subtitle">The Founders</span>
+          <h2 class="editorial-title" style="color: var(--color-ivory);">Authors of Celebrations</h2>
+          <p class="editorial-paragraph" style="color: var(--color-olive);">Our culinary vision is guided by decades of inherited expertise and contemporary global hospitality education.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); text-align: center;">
+          <!-- Mr. Anil Girdhar -->
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-md);">
+            <div style="width: 280px; height: 280px; overflow: hidden; border-radius: 50%; border: 2px solid rgba(244, 240, 230, 0.1); box-shadow: 0 10px 35px rgba(0,0,0,0.4);">
+              <img src="assets/images/anil_girdhar.png" alt="Mr. Anil Girdhar, Founder" style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%;">
+            </div>
+            <div>
+              <span class="editorial-subtitle" style="color: var(--color-terracotta);">The Scriptwriter</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: var(--space-sm); color: var(--color-ivory);">Mr. Anil Girdhar</h3>
+              <p class="editorial-paragraph" style="font-size: 0.95rem; line-height: 1.6; color: var(--color-olive); text-align: left;">The visionary progenitor of our culinary concepts, Anil is a veteran in the field of catering services, armed with decades of experience and expertise. His drive towards excellence has shepherded the enterprise to widespread national and global acclaim.</p>
+            </div>
+          </div>
+
+          <!-- Mr. Parth Girdhar -->
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-md);">
+            <div style="width: 280px; height: 280px; overflow: hidden; border-radius: 50%; border: 2px solid rgba(244, 240, 230, 0.1); box-shadow: 0 10px 35px rgba(0,0,0,0.4);">
+              <img src="assets/images/parth_girdhar.png" alt="Mr. Parth Girdhar, Chief Editor" style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%;">
+            </div>
+            <div>
+              <span class="editorial-subtitle" style="color: var(--color-terracotta);">The Chief Editor</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: var(--space-sm); color: var(--color-ivory);">Mr. Parth Girdhar</h3>
+              <p class="editorial-paragraph" style="font-size: 0.95rem; line-height: 1.6; color: var(--color-olive); text-align: left;">With specialized hospitality management education from England, Parth ensures the business represents both legacy and a meticulous services management approach, focusing on food presentations and fusion dishes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- State-of-the-Art Infrastructure Section -->
+    <section class="section" style="border-top: 1px solid rgba(244, 240, 230, 0.05); background-color: #141414;">
+      <div class="container">
+        <div class="editorial-split" style="grid-template-columns: 1fr 1fr; align-items: center;">
           <div class="editorial-text">
-            <span class="editorial-subtitle">PETITE FÊTE</span>
-            <h2 class="editorial-title" style="font-size: clamp(2rem, 3.5vw, 2.5rem); line-height: 1.15; margin-bottom: var(--space-md);">A Unit of Food Art Hospitality Pvt. Ltd. <br><span style="font-size: 1.4rem; color: var(--color-olive); font-style: italic;">From the House of Girdhars</span></h2>
-            <p class="editorial-paragraph">Food Art Hospitality Pvt. Ltd. (FAH) is recognized as the industry trailblazer with an unwavering commitment to creativity, innovation, excellence and transforming catering into an art form. FAH creates remarkable experiences by utilizing the finest ingredients and cutting-edge techniques to create fresh, vibrant cuisine coupled with world-class service.</p>
-            <p class="editorial-paragraph">The visionary founders of FAH have added another feather to their cap by launching "Petite Fête", which celebrates the favorite flavors of global street food. Petite Fête takes you on an unparalleled cultural culinary voyage like never before. This eclectic blend of bespoke luxury and fun food has already created a stir in the industry and aims to reach the pinnacle with its new age molecular gastronomy.</p>
-            <p class="editorial-paragraph">Classic street food in a new avatar is sure to deliver the surprise and tantalize your taste buds. Petite Fête has reinterpreted this culture through its lens of creativity while retaining the authenticity of each dish. The avant-garde brand will make you explore the world's culinary heritage through its theatrical food stations with an exquisite fine dining setup.</p>
-            <p class="editorial-paragraph" style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-terracotta); font-style: italic; margin-bottom: var(--space-md);">"Your Vision, Our Passion!"</p>
-            <div style="display: flex; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-sm);">
-              <a href="about.html" class="btn-luxury-solid hover-target">Our Story & Heritage</a>
-              <a href="assets/petite-fete-menu.pdf" download class="btn-luxury-solid hover-target" style="background-color: transparent; border: 1px solid var(--color-charcoal); color: var(--color-charcoal);">Download Menu PDF</a>
-            </div>
+            <span class="editorial-subtitle">The Culinary Facility</span>
+            <h2 class="editorial-title" style="color: var(--color-ivory);">21st-Century Kitchen Infrastructure</h2>
+            <p class="editorial-paragraph" style="color: var(--color-olive);">Our commercial modular kitchen complies with the highest standards of international hygiene and quality. Ergonomically designed to minimize staff movement and maximize safety, our cooking zones feature specialized cooling chambers, hot-holding galleries, and a comprehensive Food Safety Management System.</p>
+            <a href="about.html" class="btn-luxury-solid hover-target" style="margin-top: var(--space-md);">Read Infrastructure Story</a>
           </div>
-          <div class="editorial-image-container">
-            <img src="assets/images/dest_banaras.png" alt="Deconstructed Banarasi chaat served in clay pots" class="editorial-image">
+          <div class="editorial-image-container" style="border: 1px solid rgba(244, 240, 230, 0.08); padding: var(--space-xs); border-radius: 4px; background-color: rgba(255,255,255,0.01);">
+            <img src="assets/images/lobby.jpg" alt="The Culinary Canvas corporate lounge" class="editorial-image" style="height: 380px; border-radius: 2px;">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Featured Journeys Teaser -->
-    <section class="section section-dark">
-      <div class="container">
-        <span class="editorial-subtitle" style="color: var(--color-terracotta);">Curated Galleries</span>
-        <h2 class="editorial-title" style="color: var(--color-ivory); margin-bottom: var(--space-xl);">Signature Culinary Journeys</h2>
-        
-        <div class="station-grid">
-          <div class="station-card">
-            <div class="station-img-box">
-              <img src="assets/images/dest_banaras.png" alt="Deconstructed Chaat" class="station-img">
-            </div>
-            <div class="station-info-box" style="background-color: var(--color-charcoal-light); color: var(--color-ivory);">
-              <span class="station-tag">Indo-Aryan Culinary Route</span>
-              <h3 class="station-title">Banaras Heritage</h3>
-              <p class="station-desc" style="color: var(--color-olive);">Deconstructed street chaat styled in champagne glasses and artisan clay pots, accompanied by cold-pressed spiced lassi shooters.</p>
-            </div>
-          </div>
-
-          <div class="station-card">
-            <div class="station-img-box">
-              <img src="assets/images/dest_agra.png" alt="Agra Spice Galleys" class="station-img">
-            </div>
-            <div class="station-info-box" style="background-color: var(--color-charcoal-light); color: var(--color-ivory);">
-              <span class="station-tag">Mughal Spice Route</span>
-              <h3 class="station-title">Agra Fort Royal Buffet</h3>
-              <p class="station-desc" style="color: var(--color-olive);">Rich heritage spice marinades, golden leaf pethas, and organic clay-baked flatbreads served from copper vessels.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: var(--space-xl);">
-          <a href="journeys.html" class="btn-luxury-solid hover-target">Explore All 10 Destinations</a>
-        </div>
+    <!-- Infinite Scrolling Celebrations Roster -->
+    <section class="client-ticker-wrapper" style="background-color: #181818; border-top: 1px solid rgba(244, 240, 230, 0.05); border-bottom: 1px solid rgba(244, 240, 230, 0.05);">
+      <div class="client-ticker-track">
+        <!-- Duplicate elements for infinite loop effect -->
+        <span class="client-ticker-item" style="color: var(--color-champagne);">MANKIND PHARMACEUTICAL</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">MARUTI SUZUKI</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">CENTRAL INDUSTRIAL SECURITY FORCE (CISF)</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">PP JEWELLERS</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">MAC DUGGAL DESIGN HOUSE</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">RELAXO FOOTWEAR</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">OM LOGISTICS</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">ENN ENN GROUP GUJARAT</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <!-- Duplicated track for seamless loop -->
+        <span class="client-ticker-item" style="color: var(--color-champagne);">MANKIND PHARMACEUTICAL</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">MARUTI SUZUKI</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">CENTRAL INDUSTRIAL SECURITY FORCE (CISF)</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">PP JEWELLERS</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">MAC DUGGAL DESIGN HOUSE</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">RELAXO FOOTWEAR</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">OM LOGISTICS</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
+        <span class="client-ticker-item" style="color: var(--color-champagne);">ENN ENN GROUP GUJARAT</span>
+        <span class="client-ticker-item" style="color: var(--color-terracotta);">★</span>
       </div>
     </section>
 
     <!-- Event Categories Signature -->
-    <section class="section">
+    <section class="section" style="background-color: #111111;">
       <div class="container">
         <div style="text-align: center; max-width: 700px; margin: 0 auto var(--space-xl) auto;">
           <span class="editorial-subtitle">The Celebrations</span>
-          <h2 class="editorial-title">Tailored For Uncompromising Audiences</h2>
-          <p class="editorial-paragraph" style="font-size: 1rem;">From private villas in Ibiza to luxury wedding pavilions and high-concept product launches, we custom-design each menu, table landscape, and live station setting.</p>
+          <h2 class="editorial-title" style="color: var(--color-ivory);">Tailored For Uncompromising Audiences</h2>
+          <p class="editorial-paragraph" style="color: var(--color-olive);">From private villas to luxury wedding pavilions and high-concept product launches, we custom-design each menu, table landscape, and live station setting.</p>
         </div>
 
         <div class="station-grid">
-          <div class="station-card">
-            <div class="station-img-box">
-              <img src="assets/images/wedding_banquet.png" alt="Editorial wedding banqueting" class="station-img">
+          <!-- Card 1 -->
+          <div class="station-card" style="background-color: rgba(255,255,255,0.02); border: 1px solid rgba(244,240,230,0.06); border-radius: 4px; padding: var(--space-md);">
+            <div class="station-img-box" style="border-radius: 2px;">
+              <img src="assets/images/wedding_banquet.jpg" alt="Editorial wedding banqueting" class="station-img">
             </div>
             <div class="station-info-box">
               <span class="station-tag">Experiential Nuptials</span>
-              <h3 class="station-title">Destination Weddings</h3>
-              <p class="station-desc">An immersive, romantic dining experience tailored for couples seeking to tell their love story through global street flavors.</p>
+              <h3 class="station-title" style="color: var(--color-ivory); margin-top: var(--space-sm);">Destination Weddings</h3>
+              <p class="station-desc" style="color: var(--color-olive);">An immersive, romantic dining experience tailored for couples seeking to tell their love story through global street flavors.</p>
             </div>
           </div>
 
-          <div class="station-card">
-            <div class="station-img-box">
-              <img src="assets/images/corporate_cocktail.png" alt="Sleek corporate cocktail bar" class="station-img">
+          <!-- Card 2 -->
+          <div class="station-card" style="background-color: rgba(255,255,255,0.02); border: 1px solid rgba(244,240,230,0.06); border-radius: 4px; padding: var(--space-md);">
+            <div class="station-img-box" style="border-radius: 2px;">
+              <img src="assets/images/corporate_cocktail.jpg" alt="Sleek corporate cocktail bar" class="station-img">
             </div>
             <div class="station-info-box">
               <span class="station-tag">High Fashion Launches</span>
-              <h3 class="station-title">Corporate & Brands</h3>
-              <p class="station-desc">Avant-garde food styling, brand-aligned elements, and minimal setups for luxury product launches and gallery openings.</p>
+              <h3 class="station-title" style="color: var(--color-ivory); margin-top: var(--space-sm);">Corporate & Brands</h3>
+              <p class="station-desc" style="color: var(--color-olive);">Avant-garde food styling, brand-aligned elements, and minimal setups for luxury product launches and gallery openings.</p>
             </div>
           </div>
         </div>
@@ -133,12 +390,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="section section-dark" style="text-align: center; background-color: var(--color-charcoal-light);">
-      <div class="container">
-        <span class="editorial-subtitle" style="color: var(--color-terracotta);">Begin the Journey</span>
-        <h2 class="editorial-title" style="color: var(--color-ivory); font-size: 3rem; margin-bottom: var(--space-md);">Let's curate your next celebration.</h2>
-        <p class="editorial-paragraph" style="color: var(--color-champagne); max-width: 600px; margin: 0 auto var(--space-lg) auto;">Connect with our design curators to conceptualize a bespoke culinary voyage for your guests.</p>
-        <a href="contact.html" class="btn-luxury-solid hover-target">Inquire Now</a>
+    <section class="section section-dark" style="text-align: center; padding-top: var(--space-xl); padding-bottom: var(--space-xl); background-color: #0b0b0b; border-top: 1px solid rgba(244, 240, 230, 0.05);">
+      <div class="container" style="max-width: 700px; margin: 0 auto;">
+        <span class="editorial-subtitle" style="color: var(--color-terracotta);">Begin Curation</span>
+        <h2 class="editorial-title" style="color: var(--color-ivory); font-size: 2.8rem; line-height: 1.1; margin-bottom: var(--space-md);">Ready to sketch your culinary canvas?</h2>
+        <p class="editorial-paragraph" style="color: var(--color-olive); margin-bottom: var(--space-lg);">Share your date, location, and vision with our curation studio, and we will prepare a blueprint for your review.</p>
+        <a href="contact.html" class="btn-luxury-solid hover-target" style="padding: var(--space-md) var(--space-xxl);">Plan An Event</a>
       </div>
     </section>
   </main>
