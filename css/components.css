@@ -1331,14 +1331,13 @@
 
 .map-scroll-pin.active {
   background-color: var(--color-terracotta);
-  transform: translate(-50%, -50%) scale(1.4);
-  box-shadow: 0 0 15px var(--color-terracotta);
+  transform: translate(-50%, -50%) scale(1.3);
+  border: 1.5px solid var(--color-champagne);
 }
 
 .map-scroll-pin.active::after {
-  opacity: 1;
-  transform: scale(1);
-  animation: pinPulse 2s infinite;
+  opacity: 0;
+  display: none;
 }
 
 @keyframes pinPulse {
@@ -1453,12 +1452,53 @@
   }
 }
 
+@media (max-width: 768px) {
+  .map-sticky-box {
+    display: none !important; /* Hide map block on mobile viewports for clean, vertical card stacking */
+  }
+  .map-scroll-container {
+    grid-template-columns: 1fr !important;
+  }
+  .map-scroll-track {
+    padding: var(--space-lg) var(--space-md) !important;
+    gap: var(--space-lg) !important;
+  }
+  .map-scroll-card {
+    opacity: 1 !important;
+    transform: none !important;
+    background-color: var(--color-charcoal-light) !important;
+    border-left: 3px solid var(--color-terracotta) !important;
+    padding: var(--space-lg) !important;
+  }
+}
+
 /* --- POPUP CONCEPTS --- */
 .popups-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-xl);
+  grid-template-columns: repeat(5, 1fr); /* All 5 items in a clean single row on desktop */
+  gap: var(--space-md);
   margin-top: var(--space-xl);
+}
+
+@media (max-width: 1200px) {
+  .popups-grid {
+    grid-template-columns: repeat(3, 1fr); /* Balanced 3-column layout on smaller viewports */
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .popups-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout on mobile viewports */
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .popups-grid {
+    grid-template-columns: 1fr; /* Single column on compact phone viewports */
+    gap: var(--space-md);
+  }
 }
 
 .popup-card {
@@ -1520,4 +1560,20 @@
 @keyframes tickerScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* --- FOUNDERS RESPONSIVE GRID --- */
+.founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .founders-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl) !important;
+  }
 }

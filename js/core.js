@@ -34,7 +34,7 @@ function injectSharedLayout() {
   header.innerHTML = `
     <div class="container header-container">
       <div class="header-logo" style="display: flex; align-items: center; gap: var(--space-sm);">
-        <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 52px; width: 52px; object-fit: contain; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));">
+        <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 52px; width: 52px; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 5px rgba(0,0,0,0.3));">
         <a href="index.html" class="hover-target" style="letter-spacing: 0.15em; font-size: 1.25rem; font-weight: 500;">THE CULINARY CANVAS</a>
       </div>
       <div class="header-actions">
@@ -66,7 +66,7 @@ function injectSharedLayout() {
         <p class="drawer-editorial">"The street food culture of India & the world, elevated into a Michelin-inspired, luxury culinary experience."</p>
         <div class="drawer-contact-details">
           <p>INQUIRIES: <a href="mailto:curator@theculinarycanvas.co" class="hover-target">curator@theculinarycanvas.co</a></p>
-          <p>PHONE: +91 98100 55555 / +91 11 4655 8888</p>
+          <p>PHONE: +91 9991999324</p>
           <p>STUDIOS: NEW DELHI • MUMBAI • RAJASTHAN</p>
           <p>ADDRESS: The Culinary Pavilion, Chanakyapuri, New Delhi, India</p>
         </div>
@@ -82,10 +82,10 @@ function injectSharedLayout() {
       <div class="footer-grid">
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-            <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 64px; width: 64px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+            <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 64px; width: 64px; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
             <h2 style="margin-bottom: 0; font-size: 1.6rem; letter-spacing: 0.15em;">THE CULINARY CANVAS</h2>
           </div>
-          <p style="font-size: 0.75rem; letter-spacing: 0.05em; color: var(--color-terracotta); margin-bottom: var(--space-xs); text-transform: uppercase;">From the House of Girdhars</p>
+          <p style="font-size: 0.75rem; letter-spacing: 0.05em; color: var(--color-terracotta); margin-bottom: var(--space-xs); text-transform: uppercase;">By Somansh Girdhar</p>
           <p>Curators of luxury, culture-rich culinary experiences and elevated street food journeys, based in New Delhi, India. <br><strong style="color: var(--color-ivory); font-style: italic;">"Your Vision, Our Passion!"</strong></p>
         </div>
         <div class="footer-col">

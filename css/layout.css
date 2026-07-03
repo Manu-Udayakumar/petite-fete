@@ -393,6 +393,17 @@ header.global-header-dark .burger-line {
 }
 
 @media (max-width: 768px) {
+  .header-logo img {
+    height: 40px !important;
+    width: 40px !important;
+  }
+  .header-logo a {
+    font-size: 0.95rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  .global-header .inquiry-btn {
+    display: none !important; /* Hide inquiry button in mobile headers to prevent wrapping; accessible inside burger nav */
+  }
   .drawer-content {
     grid-template-columns: 1fr;
     gap: var(--space-xl);

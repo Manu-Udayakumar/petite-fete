@@ -5,15 +5,9 @@
 >
 	<style>
     path {
-        fill: rgba(244, 240, 230, 0.02);
-        stroke: rgba(194, 115, 85, 0.5);
-        stroke-width: 0.9px;
-        transition: fill 0.5s ease, stroke 0.5s ease, stroke-width 0.5s ease;
-    }
-    path:hover {
-        fill: rgba(194, 115, 85, 0.15);
-        stroke: #C27355;
-        stroke-width: 1.2px;
+        fill: none !important;
+        stroke: rgba(244, 240, 230, 0.15) !important;
+        stroke-width: 0.55px !important;
     }
 </style>
 	<path
