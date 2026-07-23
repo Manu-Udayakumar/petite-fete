@@ -1,56 +1,106 @@
 /* css/variables.css */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Pinyon+Script&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+/* =============================================
+   INDIMO — OFFICIAL BRAND DESIGN SYSTEM
+   Cherrywood · Antique Gold · Emerald · Ivory
+   ============================================= */
 
 :root {
-  /* Color Palette */
-  --color-ivory: #FDFBF7;       /* Warm Ivory background */
-  --color-champagne: #F4ECE1;   /* Champagne accents & secondary containers */
-  --color-olive: #6E7A66;       /* Soft Olive text and borders */
-  --color-olive-light: rgba(110, 122, 102, 0.1);
-  --color-charcoal: #1A1A1A;    /* Primary text and dark luxury sections */
-  --color-charcoal-light: #2A2A2A;
-  --color-terracotta: #C27355;  /* Muted Terracotta accents */
-  --color-white: #FFFFFF;
+  /* ── Core Brand Palette ── */
+  --c-cherrywood:   #370A0D;
+  --c-gold:         #6C4212;
+  --c-gold-light:   #9B6530;   /* brightened gold for readable text on dark */
+  --c-emerald:      #0A2617;
+  --c-ivory:        #FFFAE9;
+  --c-ivory-warm:   #F5EFD6;   /* slightly deeper ivory for cards/sections */
 
-  /* Typography Pairing */
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-sans: 'Outfit', sans-serif;
+  /* ── Semantic Tokens ── */
+  --color-bg-page:      var(--c-ivory);
+  --color-bg-dark:      #0E0E0E;          /* near-black for full dark sections */
+  --color-bg-mid-dark:  var(--c-emerald); /* deep emerald for feature sections */
+  --color-bg-card:      #1A120F;          /* warm dark card bg */
+  --color-bg-accent:    var(--c-cherrywood);
 
-  /* Font Weights */
-  --weight-light: 300;
+  --color-text-primary:   var(--c-cherrywood);  /* on light backgrounds */
+  --color-text-body:      #3A1C0E;              /* warm dark brown for body text */
+  --color-text-muted:     #7A5040;              /* muted warm text */
+  --color-text-on-dark:   var(--c-ivory);       /* primary on dark bg */
+  --color-text-gold:      var(--c-gold-light);  /* gold tones on dark surfaces */
+
+  --color-border:         rgba(108, 66, 18, 0.25);   /* gold border */
+  --color-border-dark:    rgba(255, 250, 233, 0.1);  /* ivory border on dark */
+  --color-border-accent:  var(--c-gold);
+
+  /* ── Backward Compat Aliases ── */
+  --color-cherrywood:   var(--c-cherrywood);
+  --color-gold:         var(--c-gold);
+  --color-emerald:      var(--c-emerald);
+  --color-ivory:        var(--c-ivory);
+  --color-champagne:    var(--c-ivory-warm);
+  --color-olive:        var(--c-gold-light);
+  --color-olive-light:  rgba(108, 66, 18, 0.18);
+  --color-charcoal:     #0E0E0E;
+  --color-charcoal-light: #1A120F;
+  --color-terracotta:   var(--c-cherrywood);
+  --color-white:        #FFFFFF;
+  --color-text-dark-bg: var(--c-ivory);
+  --color-primary:      var(--c-cherrywood);
+  --color-accent:       var(--c-gold);
+  --color-secondary:    var(--c-emerald);
+  --color-bg:           var(--c-ivory);
+
+  /* ── Typography ── */
+  --font-serif:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Outfit', sans-serif;
+  --font-script:  'Pinyon Script', cursive;
+
+  --weight-light:   300;
   --weight-regular: 400;
-  --weight-medium: 500;
-  --weight-semi: 600;
-  --weight-bold: 700;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
 
-  /* Global Transitions */
-  --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-fast: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  --transition-slow: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+  /* ── Spacing ── */
+  --space-unit: 1rem;
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   2rem;
+  --space-xl:   4rem;
+  --space-xxl:  8rem;
+
+  /* ── Radius ── */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-pill: 100px;
+
+  /* ── Shadows ── */
+  --shadow-sm:   0 2px 8px rgba(55, 10, 13, 0.08);
+  --shadow-md:   0 8px 24px rgba(55, 10, 13, 0.12);
+  --shadow-lg:   0 20px 60px rgba(55, 10, 13, 0.18);
+  --shadow-gold: 0 8px 30px rgba(108, 66, 18, 0.25);
+
+  /* ── Transitions ── */
+  --transition-fast:   all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow:   all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
   --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* Spacing system */
-  --space-unit: 1rem;
-  --space-xs: calc(var(--space-unit) * 0.25);
-  --space-sm: calc(var(--space-unit) * 0.5);
-  --space-md: var(--space-unit);
-  --space-lg: calc(var(--space-unit) * 2);
-  --space-xl: calc(var(--space-unit) * 4);
-  --space-xxl: calc(var(--space-unit) * 8);
-
-  /* Z-Index Hierarchy */
-  --z-base: 1;
-  --z-nav-fixed: 100;
-  --z-drawer: 200;
+  /* ── Z-Index ── */
+  --z-base:            1;
+  --z-nav-fixed:       100;
+  --z-drawer:          200;
   --z-transition-wipe: 300;
-  --z-loader: 400;
-  --z-cursor: 500;
+  --z-loader:          400;
+  --z-cursor:          500;
 
-  /* Cursor custom dimensions */
+  /* ── Cursor ── */
   --cursor-size: 8px;
 }
 
-/* Base Styles & Custom Scrollbar */
+/* ── Base Reset ── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -60,41 +110,32 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  background-color: var(--color-ivory);
-  color: var(--color-charcoal);
+  background-color: var(--c-ivory);
+  color: var(--color-text-body);
   font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Premium Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-ivory);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-olive);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-terracotta);
-}
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--c-ivory); }
+::-webkit-scrollbar-thumb { background: var(--c-gold); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--c-cherrywood); }
 
-/* Custom Selection Highlight */
+/* ── Selection ── */
 ::selection {
-  background-color: var(--color-champagne);
-  color: var(--color-terracotta);
+  background-color: var(--c-cherrywood);
+  color: var(--c-ivory);
 }
 
-/* Typography Utilities */
+/* ── Headings ── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: var(--weight-light);
@@ -111,13 +152,11 @@ a {
 button {
   background: none;
   border: none;
-  font: inherit;
   cursor: pointer;
-  color: inherit;
+  font-family: var(--font-sans);
 }
 
 img {
   max-width: 100%;
-  height: auto;
   display: block;
 }

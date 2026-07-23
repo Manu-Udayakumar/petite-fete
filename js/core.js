@@ -26,16 +26,17 @@ function injectSharedLayout() {
   const pageName = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
 
   // Determine if header should start dark/transparent (like on Home page with full hero)
-  const isDarkHeader = pageName === 'index.html' || pageName === 'india.html';
+  const isDarkHeader = pageName === 'index.html';
 
   // Create Header Markup
   const header = document.createElement('header');
   header.className = `global-header ${isDarkHeader ? 'global-header-dark' : ''}`;
   header.innerHTML = `
     <div class="container header-container">
-      <div class="header-logo" style="display: flex; align-items: center; gap: var(--space-sm);">
-        <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 52px; width: 52px; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 5px rgba(0,0,0,0.3));">
-        <a href="index.html" class="hover-target" style="letter-spacing: 0.15em; font-size: 1.25rem; font-weight: 500;">THE CULINARY CANVAS</a>
+      <div class="header-logo" style="display: flex; align-items: center;">
+        <a href="index.html" class="hover-target" style="display: flex; align-items: center;">
+          <img src="assets/images/logo.png?v=8" alt="Indimo Logo" style="height: 28px; width: auto; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.3));">
+        </a>
       </div>
       <div class="header-actions">
         <a href="contact.html" class="inquiry-btn hover-target">Plan An Event</a>
@@ -58,17 +59,15 @@ function injectSharedLayout() {
         <li><a href="index.html" class="hover-target ${pageName === 'index.html' ? 'active' : ''}">Home</a></li>
         <li><a href="about.html" class="hover-target ${pageName === 'about.html' ? 'active' : ''}">About</a></li>
         <li><a href="journeys.html" class="hover-target ${pageName === 'journeys.html' ? 'active' : ''}">Culinary Journeys</a></li>
-        <li><a href="menu.html" class="hover-target ${pageName === 'menu.html' ? 'active' : ''}">Menu Collection</a></li>
-        <li><a href="india.html" class="hover-target ${pageName === 'india.html' ? 'active' : ''}">Interactive Map</a></li>
         <li><a href="contact.html" class="hover-target ${pageName === 'contact.html' ? 'active' : ''}">Contact</a></li>
       </ul>
       <div class="drawer-info">
         <p class="drawer-editorial">"The street food culture of India & the world, elevated into a Michelin-inspired, luxury culinary experience."</p>
         <div class="drawer-contact-details">
-          <p>INQUIRIES: <a href="mailto:curator@theculinarycanvas.co" class="hover-target">curator@theculinarycanvas.co</a></p>
+          <p>INQUIRIES: <a href="mailto:curator@indimo.co" class="hover-target">curator@indimo.co</a></p>
           <p>PHONE: +91 9991999324</p>
           <p>STUDIOS: NEW DELHI • MUMBAI • RAJASTHAN</p>
-          <p>ADDRESS: The Culinary Pavilion, Chanakyapuri, New Delhi, India</p>
+          <p>ADDRESS: The Indimo Pavilion, Chanakyapuri, New Delhi, India</p>
         </div>
       </div>
     </div>
@@ -81,9 +80,10 @@ function injectSharedLayout() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm);">
-            <img src="assets/images/logo.png" alt="TCC Monogram Logo" style="height: 64px; width: 64px; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
-            <h2 style="margin-bottom: 0; font-size: 1.6rem; letter-spacing: 0.15em;">THE CULINARY CANVAS</h2>
+          <div style="display: flex; align-items: center; margin-bottom: var(--space-sm);">
+            <a href="index.html" class="hover-target" style="display: flex; align-items: center;">
+              <img src="assets/images/logo.png?v=8" alt="Indimo Logo" style="height: 36px; width: auto; object-fit: contain; filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+            </a>
           </div>
           <p style="font-size: 0.75rem; letter-spacing: 0.05em; color: var(--color-terracotta); margin-bottom: var(--space-xs); text-transform: uppercase;">By Somansh Girdhar</p>
           <p>Curators of luxury, culture-rich culinary experiences and elevated street food journeys, based in New Delhi, India. <br><strong style="color: var(--color-ivory); font-style: italic;">"Your Vision, Our Passion!"</strong></p>
@@ -93,16 +93,12 @@ function injectSharedLayout() {
           <ul>
             <li><a href="about.html" class="hover-target">Our Story & Heritage</a></li>
             <li><a href="journeys.html" class="hover-target">Culinary Journeys</a></li>
-            <li><a href="menu.html" class="hover-target">Menu Collection</a></li>
-            <li><a href="india.html" class="hover-target">Interactive Map</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h3>Services</h3>
           <ul>
             <li><a href="journeys.html" class="hover-target">Bespoke Journeys</a></li>
-            <li><a href="menu.html" class="hover-target">Signature Creations</a></li>
-            <li><a href="india.html" class="hover-target">Regional Map</a></li>
             <li><a href="contact.html" class="hover-target">Plan An Event</a></li>
           </ul>
         </div>
@@ -116,7 +112,7 @@ function injectSharedLayout() {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 The Culinary Canvas India. All rights reserved.</p>
+        <p>© 2026 Indimo India. All rights reserved.</p>
         <p>Awwwards Design Inspiration • Privacy Policy • T&C</p>
       </div>
     </div>
